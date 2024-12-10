@@ -6,7 +6,7 @@ public class ShootBullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-         Destroy(gameObject, 5f);
+        Destroy(gameObject, 5f);
         // Optional: Initialization logic if needed
     }
 
