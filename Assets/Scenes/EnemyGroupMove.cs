@@ -22,7 +22,7 @@ namespace Assets.Scenes
 
             if ((transform.position.x < -BorderWidth && movement.x < 0) || (transform.position.x > BorderWidth && movement.x > 0))
             {
-                moveDirection *= -1;
+                moveDirection *=  -1;
                 return;
             }
 
