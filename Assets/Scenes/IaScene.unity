@@ -184,6 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49ed14580ed754f7b8306e1a60b8493a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tag: Enemy
 --- !u!4 &269043831 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6255687462203759091, guid: 4c3e97a6595314d42b8e126eb0ff1bcd, type: 3}
@@ -322,6 +323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49ed14580ed754f7b8306e1a60b8493a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tag: Enemy
 --- !u!4 &340789761 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6255687462203759091, guid: 4c3e97a6595314d42b8e126eb0ff1bcd, type: 3}
@@ -340,7 +342,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  groupTransform: {fileID: 0}
+  BorderWidth: 10
 --- !u!1001 &445785194
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -820,6 +822,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 3084465994950235829, guid: c20878a075e0c4f2b8a0894e5c597aa4, type: 3}
+  maxBullets: 5
+  currentBullets: 0
 --- !u!1001 &859353987
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -878,7 +882,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8772848132399414832, guid: 4c3e97a6595314d42b8e126eb0ff1bcd, type: 3}
       propertyPath: m_TagString
-      value: Enemy
+      value: Finish
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -931,6 +935,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 996909520}
+  - component: {fileID: 996909521}
   m_Layer: 0
   m_Name: EnemyGroup
   m_TagString: Untagged
@@ -959,6 +964,20 @@ Transform:
   - {fileID: 1824536598}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &996909521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 996909519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4b4fac239040bc48aec4a5e0380f1af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  BorderWidth: 8
 --- !u!1001 &1067911591
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1237,6 +1256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49ed14580ed754f7b8306e1a60b8493a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tag: Enemy
 --- !u!4 &1798172196 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6255687462203759091, guid: 4c3e97a6595314d42b8e126eb0ff1bcd, type: 3}
@@ -1304,6 +1324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49ed14580ed754f7b8306e1a60b8493a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tag: Enemy
 --- !u!4 &1824536598 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6255687462203759091, guid: 4c3e97a6595314d42b8e126eb0ff1bcd, type: 3}
@@ -1371,6 +1392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49ed14580ed754f7b8306e1a60b8493a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tag: Enemy
 --- !u!4 &1921480000 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6255687462203759091, guid: 4c3e97a6595314d42b8e126eb0ff1bcd, type: 3}
@@ -1438,6 +1460,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49ed14580ed754f7b8306e1a60b8493a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tag: Enemy
 --- !u!4 &2034089594 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6255687462203759091, guid: 4c3e97a6595314d42b8e126eb0ff1bcd, type: 3}
