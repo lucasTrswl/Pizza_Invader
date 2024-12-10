@@ -10,10 +10,17 @@ public class MainMenuController : MonoBehaviour
         SceneManager.LoadScene("Florian - SampleScene 1");
     }
 
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
     // Fonction appelée pour quitter le jeu
     public void QuitGame()
     {
         Debug.Log("Quitter le jeu !");
         Application.Quit(); // Ne fonctionne que dans un build
     }
+
+
 }
