@@ -1,21 +1,20 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class MoveObject : MonoBehaviour
 {
-        void Start() {
-            
-        }
-
     public float speed = 5f; // Vitesse de déplacement
 
     void Update()
     {
         // Lecture des touches directionnelles ou des axes d'entrée
         float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
 
         // Calcul du déplacement
-        Vector3 movement = new Vector3(horizontal, 0, vertical) * speed * Time.deltaTime;
+        Vector2 movement = new Vector2(horizontal, 0) * speed * Time.deltaTime;
+
+        if ((transform.position.x < -10 && movement.x < 0) || (transform.position.x > 10 && movement.x > 0)) return;
+
 
         // Appliquer le mouvement
         transform.Translate(movement);

@@ -18,9 +18,7 @@ public class PlayerShoot : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0)) {
             // Create bullet at current position
-            GameObject bullet = Instantiate(bulletPrefab, transform.position + Vector3.up * 0.5f, Quaternion.identity);
-            
-           
+            Instantiate(bulletPrefab, transform.position + Vector3.up * 0.5f, Quaternion.identity);           
         }
     }
 }
