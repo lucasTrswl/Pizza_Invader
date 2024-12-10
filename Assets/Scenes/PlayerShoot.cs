@@ -9,8 +9,8 @@ public class PlayerShoot : MonoBehaviour
     public Camera mainCamera; // Référence à la caméra principale
     public float zoomSpeed = 2f; // Vitesse de zoom/dézoom
     public float minZoom = 5f; // Zoom minimum
-    public float maxZoom = 15f; // Zoom maximum
-    public float actionZoomThreshold = 7f; // Niveau de zoom pour déclencher l'action
+    public float maxZoom = 20f; // Zoom maximum
+    public float actionZoomThreshold = 15f; // Niveau de zoom pour déclencher l'action
 
     void Start()
     {
@@ -26,10 +26,10 @@ public class PlayerShoot : MonoBehaviour
         float scrollInput = Input.GetAxis("Mouse ScrollWheel");
         if (scrollInput != 0)
         {
-            mainCamera.orthographicSize -= scrollInput * zoomSpeed; // Inversé pour un zoom intuitif
+            mainCamera.orthographicSize += scrollInput * zoomSpeed; // Inversé pour un zoom intuitif
             mainCamera.orthographicSize = Mathf.Clamp(mainCamera.orthographicSize, minZoom, maxZoom);
         }
-
+        
         // Gestion des tirs
         if (Input.GetMouseButtonDown(0))
         {
