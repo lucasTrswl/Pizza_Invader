@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro; // Pour utiliser TextMeshPro
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -47,5 +48,7 @@ public class PlayerHealth : MonoBehaviour
         {
             healthText.text = "Player Health : 0";
         }
+
+        SceneManager.LoadScene("GameOver");
     }
 }
