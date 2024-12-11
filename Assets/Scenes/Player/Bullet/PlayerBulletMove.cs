@@ -19,4 +19,21 @@ public class PlayerBulletMove : MonoBehaviour
         transform.position = newPosition;
     }
 
+
+      private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log(collision.gameObject.tag);
+        if (collision.gameObject.CompareTag("Enemy")) // Vérifie si l'objet touché est un ennemi
+        {
+            // Réduit les points de vie de l'ennemi
+            EnemyHealth enemyHealth = collision.gameObject.GetComponent<EnemyHealth>();
+            if (enemyHealth != null)
+            {
+                enemyHealth.TakeDamage(1); // Inflige 1 point de dégâts à l'ennemi
+            }
+
+            Destroy(gameObject); // Détruit la balle après la collision
+        }
+    }
+
 }
