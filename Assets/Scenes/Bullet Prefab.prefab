@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5353715740130886928}
   m_Layer: 0
   m_Name: Bullet Prefab
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -101,6 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49ed14580ed754f7b8306e1a60b8493a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tag: Enemy
 --- !u!114 &5172654120661577235
 MonoBehaviour:
   m_ObjectHideFlags: 0
