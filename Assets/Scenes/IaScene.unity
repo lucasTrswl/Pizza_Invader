@@ -822,9 +822,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 3084465994950235829, guid: c20878a075e0c4f2b8a0894e5c597aa4, type: 3}
+  largeBullet: {fileID: 0}
+  mainCamera: {fileID: 0}
+  zoomSpeed: 2
+  minZoom: 5
+  maxZoom: 20
+  actionZoomThreshold: 15
   maxBullets: 5
   currentBullets: 0
---- !u!1001 &859353987
+
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1460,6 +1466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49ed14580ed754f7b8306e1a60b8493a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+
   tag: Enemy
 --- !u!4 &2034089594 stripped
 Transform:

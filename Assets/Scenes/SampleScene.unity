@@ -230,7 +230,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1208,6 +1208,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Circle
       objectReference: {fileID: 0}
+    - target: {fileID: 8498083201032046137, guid: 3b7a2e1b27b15451390942d0d7a5f1d2, type: 3}
+      propertyPath: largeBullet
+      value: 
+      objectReference: {fileID: 3086548952445215452, guid: 08994c2fe14df4569aa5166756c84d9e, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
