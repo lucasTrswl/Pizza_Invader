@@ -184,7 +184,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8772848132399414832, guid: 4c3e97a6595314d42b8e126eb0ff1bcd, type: 3}
       propertyPath: m_TagString
-      value: Finish
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -680,7 +680,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8772848132399414832, guid: 4c3e97a6595314d42b8e126eb0ff1bcd, type: 3}
       propertyPath: m_TagString
-      value: Finish
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
