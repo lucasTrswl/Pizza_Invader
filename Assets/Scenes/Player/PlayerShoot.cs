@@ -10,8 +10,8 @@ public class PlayerShoot : MonoBehaviour
     public float ZoomSpeed = 2f; // Vitesse de zoom/dézoom
     public float minZoom = 5f; // Zoom minimum
     public float MaxZoom = 20f; // Zoom maximum
-    public int MaxBullets = 5; // Limite de tirs
-    public int CurrentBullets = 0; // Compteur de tirs actuels
+    public int MaxBullets = 5; // Nombre maximum de balles
+    public int CurrentBullets = 0; // Nombre de balles utilisées
 
     void Start()
     {
