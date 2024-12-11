@@ -7,7 +7,7 @@ public class MainMenuController : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene("Florian - SampleScene 1");
+        SceneManager.LoadScene("SampleScene");
     }
 
     public void MainMenu()

@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: a93243067acadea44a994390bfe059cb
   - enabled: 1
-    path: Assets/Scenes/Florian - SampleScene 1.unity
+    path: Assets/Scenes/SampleScene.unity
     guid: b2b59b498d236944c9bc0bcad23885b7
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
