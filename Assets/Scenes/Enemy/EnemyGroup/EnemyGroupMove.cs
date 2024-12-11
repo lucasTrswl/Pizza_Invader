@@ -6,7 +6,7 @@ namespace Assets.Scenes
     public class EnemyGroupMove: MonoBehaviour
     {
         public float speed;
-        private int moveDirection;
+        private float moveDirection = 0;
         public float BorderWidth = 10;
 
         // Use this for initialization

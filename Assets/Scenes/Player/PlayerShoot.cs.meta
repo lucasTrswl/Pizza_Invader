@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: b4966acffd6774ea984c066599e42da9
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - NormalBullet: {fileID: 3084465994950235829, guid: c20878a075e0c4f2b8a0894e5c597aa4, type: 3}
+  - LargeBullet: {fileID: 3086548952445215452, guid: 08994c2fe14df4569aa5166756c84d9e, type: 3}
+  - MainCamera: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

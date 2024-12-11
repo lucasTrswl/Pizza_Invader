@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveObject : MonoBehaviour
+public class PlayerMove : MonoBehaviour
 {
     public float speed = 5f; // Vitesse de déplacement
 

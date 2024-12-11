@@ -1,7 +1,7 @@
 using UnityEngine;
 
 
-public class ShootBullet : MonoBehaviour
+public class PlayerBulletMove : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()

@@ -4,24 +4,24 @@ using UnityEngine;
 
 public class PlayerShoot : MonoBehaviour
 {
-    public GameObject bulletPrefab; // Petite balle
-    public GameObject largeBullet; // Grande balle
-    public Camera mainCamera; // Référence à la caméra principale
-    public float zoomSpeed = 2f; // Vitesse de zoom/dézoom
+    public GameObject NormalBullet; // Petite balle
+    public GameObject LargeBullet; // Grande balle
+    public Camera MainCamera; // Référence à la caméra principale
+    public float ZoomSpeed = 2f; // Vitesse de zoom/dézoom
     public float minZoom = 5f; // Zoom minimum
-    public float maxZoom = 20f; // Zoom maximum
-    public int maxBullets = 5; // Limite de tirs
-    public int currentBullets = 0; // Compteur de tirs actuels
+    public float MaxZoom = 20f; // Zoom maximum
+    public int MaxBullets = 5; // Limite de tirs
+    public int CurrentBullets = 0; // Compteur de tirs actuels
 
     void Start()
     {
         // Si la caméra principale n'est pas assignée, utiliser celle par défaut
-        if (mainCamera == null)
+        if (MainCamera == null)
         {
-            mainCamera = Camera.main;
+            MainCamera = Camera.main;
         }
 
-        currentBullets = 0; // Initialisation du compteur de balles
+        CurrentBullets = 0; // Initialisation du compteur de balles
     }
 
     void Update()
@@ -36,30 +36,30 @@ public class PlayerShoot : MonoBehaviour
         float scrollInput = Input.GetAxis("Mouse ScrollWheel");
         if (scrollInput != 0)
         {
-            mainCamera.orthographicSize -= scrollInput * zoomSpeed; // Utiliser un zoom intuitif
-            mainCamera.orthographicSize = Mathf.Clamp(mainCamera.orthographicSize, minZoom, maxZoom);
+            MainCamera.orthographicSize -= scrollInput * ZoomSpeed; // Utiliser un zoom intuitif
+            MainCamera.orthographicSize = Mathf.Clamp(MainCamera.orthographicSize, minZoom, MaxZoom);
         }
     }
 
     void HandleShooting()
     {
         // Vérifier si le joueur appuie sur le bouton gauche de la souris
-        if (Input.GetMouseButtonDown(0) && currentBullets < maxBullets)
+        if (Input.GetMouseButtonDown(0) && CurrentBullets < MaxBullets)
         {
             // Vérifier la taille de la caméra pour déterminer le type de tir
-            if (mainCamera.orthographicSize < 6f)
+            if (MainCamera.orthographicSize < 6f)
             {
                 // Si la caméra est en dessous de 9 (zoom), tirer une grande balle
-                Instantiate(largeBullet, transform.position + Vector3.up * 0.5f, Quaternion.identity);
+                Instantiate(LargeBullet, transform.position + Vector3.up * 0.5f, Quaternion.identity);
             }
             else
             {
                 // Si la caméra est à 9 ou plus (non zoomée), tirer une balle normale
-                Instantiate(bulletPrefab, transform.position + Vector3.up * 0.5f, Quaternion.identity);
+                Instantiate(NormalBullet, transform.position + Vector3.up * 0.5f, Quaternion.identity);
             }
 
             // Incrémenter le compteur de balles
-            currentBullets++;
+            CurrentBullets++;
         }
 
         // Vérifier si le joueur appuie sur "R" pour recharger
@@ -71,7 +71,7 @@ public class PlayerShoot : MonoBehaviour
 
     void Reload()
     {
-        currentBullets = 0; // Réinitialiser le compteur de balles
+        CurrentBullets = 0; // Réinitialiser le compteur de balles
         Debug.Log("Recharge terminée !");
     }
 }

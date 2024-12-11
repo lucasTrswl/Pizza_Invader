@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnnemyShoot : MonoBehaviour
+public class EnemyShoot : MonoBehaviour
 {
     public GameObject bulletPrefab; // Le prefab du projectile
     public float minShootInterval = 1.0f; // Intervalle minimum entre les tirs

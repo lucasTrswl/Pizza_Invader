@@ -9,7 +9,7 @@ public class BulletUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        int remainingBullets = playerShoot.maxBullets - playerShoot.currentBullets;
+        int remainingBullets = playerShoot.MaxBullets - playerShoot.CurrentBullets;
         bulletText.text = "Bullets: " + remainingBullets.ToString(); // Convertir en chaîne
     }
 }
