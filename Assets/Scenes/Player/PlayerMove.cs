@@ -5,6 +5,8 @@ public class PlayerMove : MonoBehaviour
 {
     public float speed = 5f; // Vitesse de déplacement
 
+    public float borderScene = 10;
+
     void Update()
     {
         // Lecture des touches directionnelles ou des axes d'entrée
@@ -13,7 +15,8 @@ public class PlayerMove : MonoBehaviour
         // Calcul du déplacement
         Vector2 movement = new Vector2(horizontal, 0) * speed * Time.deltaTime;
 
-        if ((transform.position.x < -10 && movement.x < 0) || (transform.position.x > 10 && movement.x > 0)) return;
+        // empêche de sortir de la scène
+        if ((transform.position.x < -borderScene && movement.x < 0) || (transform.position.x > borderScene && movement.x > 0)) return;
 
 
         // Appliquer le mouvement
