@@ -1290,14 +1290,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerShoot: {fileID: 0}
-<<<<<<< HEAD
   bulletPrefab: {fileID: 0}
   bulletContainer: {fileID: 0}
 --- !u!4 &1167910662 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6255687462203759091, guid: bd530b3218ce0d2448970df537367492, type: 3}
   m_PrefabInstance: {fileID: 616103868}
-=======
   bulletText: {fileID: 0}
 --- !u!4 &1181447397 stripped
 Transform:
@@ -1334,7 +1332,6 @@ MonoBehaviour:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8772848132399414832, guid: 296143820f7f5c54ab7b10bcef6642d0, type: 3}
   m_PrefabInstance: {fileID: 23508823}
->>>>>>> a3f60dc67888f0051cff563eeec6dc5ce9a2b848
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1417532667 stripped
 MonoBehaviour:
@@ -1347,9 +1344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4966acffd6774ea984c066599e42da9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
 --- !u!4 &1505353478 stripped
-=======
 --- !u!1 &1548683915
 GameObject:
   m_ObjectHideFlags: 0
@@ -1546,7 +1541,6 @@ MonoBehaviour:
   playerShoot: {fileID: 0}
   bulletText: {fileID: 1548683917}
 --- !u!4 &1643791385
->>>>>>> a3f60dc67888f0051cff563eeec6dc5ce9a2b848
 Transform:
   m_CorrespondingSourceObject: {fileID: 4524349261436367221, guid: 57ab7a13ab59ed9408e38ca8c7c6c67a, type: 3}
   m_PrefabInstance: {fileID: 185655563}
@@ -1555,7 +1549,6 @@ Transform:
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-<<<<<<< HEAD
   m_Modification:
     serializedVersion: 3
     m_TransformParent: {fileID: 1505353478}
@@ -1614,7 +1607,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6255687462203759091, guid: 296143820f7f5c54ab7b10bcef6642d0, type: 3}
   m_PrefabInstance: {fileID: 2146594530}
   m_PrefabAsset: {fileID: 0}
-=======
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.781372, y: -1.4670105, z: -9.985301}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -1658,7 +1650,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tag: Enemy
->>>>>>> a3f60dc67888f0051cff563eeec6dc5ce9a2b848
 --- !u!1001 &1826391912
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1845,9 +1836,7 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-<<<<<<< HEAD
   m_SourcePrefab: {fileID: 100100000, guid: 296143820f7f5c54ab7b10bcef6642d0, type: 3}
-=======
   m_SourcePrefab: {fileID: 100100000, guid: 3b7a2e1b27b15451390942d0d7a5f1d2, type: 3}
 --- !u!4 &1921231341 stripped
 Transform:
@@ -2006,7 +1995,6 @@ PrefabInstance:
       insertIndex: 3
       addedObject: {fileID: 1735745421}
   m_SourcePrefab: {fileID: 100100000, guid: 4c3e97a6595314d42b8e126eb0ff1bcd, type: 3}
->>>>>>> a3f60dc67888f0051cff563eeec6dc5ce9a2b848
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
