@@ -1,9 +1,9 @@
 using UnityEngine;
 
-
 public class PlayerBulletMove : MonoBehaviour
 {
     private string bulletType; // Type de la balle (Normal, Large, etc.)
+    public float bulletSpeed = 9f; // Vitesse de la balle (modifiable dans l'inspecteur)
 
     public void SetBulletType(string type)
     {
@@ -14,19 +14,17 @@ public class PlayerBulletMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Destroy(gameObject, 5f);
-        // Optional: Initialization logic if needed
+        Destroy(gameObject, 5f); // Détruit la balle après 5 secondes
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Move the bullet upward
+        // Déplacer la balle vers le haut à une vitesse ajustable
         Vector3 newPosition = transform.position;
-        newPosition.y += 3 * Time.deltaTime;
+        newPosition.y += bulletSpeed * Time.deltaTime; // Utiliser bulletSpeed pour la vitesse de déplacement
         transform.position = newPosition;
     }
-
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -38,12 +36,12 @@ public class PlayerBulletMove : MonoBehaviour
                 if (bulletType == "Normal")
                 {
                     Debug.Log("Applying 1 damage");
-                    enemyHealth.TakeDamage(1);
+                    enemyHealth.TakeDamage(1); // Inflige 1 point de dégâts
                 }
                 else if (bulletType == "Large")
                 {
                     Debug.Log("Applying 2 damage");
-                    enemyHealth.TakeDamage(2);
+                    enemyHealth.TakeDamage(2); // Inflige 2 points de dégâts
                 }
                 else
                 {
@@ -56,7 +54,5 @@ public class PlayerBulletMove : MonoBehaviour
 
             Destroy(gameObject); // Détruire la balle après collision
         }
-
-
     }
 }

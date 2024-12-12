@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class EnemyBulletDamage : MonoBehaviour
 {
+    public float bulletSpeed = 5f; // Vitesse de la balle ennemie (modifiable dans l'inspecteur)
+
     void Start()
     {
         Destroy(gameObject, 5f); // Détruit la balle au bout de 5 secondes
@@ -9,9 +11,9 @@ public class EnemyBulletDamage : MonoBehaviour
 
     void Update()
     {
-        // Déplace la balle vers le bas
+        // Déplace la balle vers le bas à la vitesse spécifiée
         Vector3 newPosition = transform.position;
-        newPosition.y -= 3 * Time.deltaTime;
+        newPosition.y -= bulletSpeed * Time.deltaTime; // Utilise bulletSpeed pour la vitesse de déplacement
         transform.position = newPosition;
     }
 
@@ -27,7 +29,7 @@ public class EnemyBulletDamage : MonoBehaviour
                 playerHealth.TakeDamage(1); // Inflige 1 point de dégâts
             }
 
-            Destroy(gameObject); // Détruit la balle après collision
+            Destroy(gameObject); // Détruire la balle après collision
         }
     }
 }
