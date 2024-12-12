@@ -184,8 +184,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
-<<<<<<< HEAD
-=======
 --- !u!1001 &23508823
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -257,7 +255,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8772848132399414832, guid: bd530b3218ce0d2448970df537367492, type: 3}
   m_PrefabInstance: {fileID: 1989866685}
   m_PrefabAsset: {fileID: 0}
->>>>>>> e5732d67c96deeac7e83fdbcea1f73e1426a8500
 --- !u!1 &98624725
 GameObject:
   m_ObjectHideFlags: 0
@@ -1524,12 +1521,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38cb5555d92edaa489e7d99edb613480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
   pauseMenuUI: {fileID: 995902783}
   resumeButton: {fileID: 459896442}
   mainMenuButton: {fileID: 952598361}
 --- !u!1 &952598359
-=======
 --- !u!114 &1181447402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1556,7 +1551,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1189773078 stripped
->>>>>>> e5732d67c96deeac7e83fdbcea1f73e1426a8500
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2285,7 +2279,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -2306,26 +2299,21 @@ MonoBehaviour:
   m_PixelsPerUnitMultiplier: 1
 --- !u!222 &1525388979
 CanvasRenderer:
-=======
   health: 4
 --- !u!114 &1735745428
 MonoBehaviour:
->>>>>>> e5732d67c96deeac7e83fdbcea1f73e1426a8500
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
   m_GameObject: {fileID: 1525388976}
   m_CullTransparentMesh: 1
-=======
   m_GameObject: {fileID: 1735745416}
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc3975b4529ab49f88f0f995d2795dcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
->>>>>>> e5732d67c96deeac7e83fdbcea1f73e1426a8500
 --- !u!1001 &1826391912
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2480,7 +2468,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -2560,18 +2547,14 @@ MonoBehaviour:
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &2131998632
 CanvasRenderer:
-=======
 --- !u!114 &1921231346
 MonoBehaviour:
->>>>>>> e5732d67c96deeac7e83fdbcea1f73e1426a8500
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
   m_GameObject: {fileID: 2131998629}
   m_CullTransparentMesh: 1
-=======
   m_GameObject: {fileID: 1189773078}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -2720,7 +2703,6 @@ PrefabInstance:
       insertIndex: 5
       addedObject: {fileID: 1735745428}
   m_SourcePrefab: {fileID: 100100000, guid: 4c3e97a6595314d42b8e126eb0ff1bcd, type: 3}
->>>>>>> e5732d67c96deeac7e83fdbcea1f73e1426a8500
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
