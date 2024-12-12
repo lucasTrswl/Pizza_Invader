@@ -1,21 +1,35 @@
 using UnityEngine;
+
 public class EnemyHealth : MonoBehaviour
 {
-    public int health = 3; // Nombre initial de vies de l'ennemi
+    public int health = 3; // Points de vie de l'ennemi
+
+    private WaveManager waveManager; // Référence au WaveManager
+
+    void Start()
+    {
+        // Trouver le WaveManager dans la scène
+        waveManager = FindObjectOfType<WaveManager>();
+    }
+
     public void TakeDamage(int damage)
     {
         health -= damage;
-        Debug.Log($"Enemy took {damage} damage, remaining health: {health}"); // Afficher dégâts et santé restante
-
         if (health <= 0)
         {
             Die();
         }
     }
+
     void Die()
     {
-        // Actions à effectuer lorsque l'ennemi meurt
-        Debug.Log("Enemy is Dead");
-        Destroy(gameObject); // Détruire l'ennemi
+        // Appel de la méthode EnemyDefeated du WaveManager pour signaler que l'ennemi est tué
+        if (waveManager != null)
+        {
+            waveManager.EnemyDefeated(); // Signale que l'ennemi est tué
+        }
+
+        // Détruire l'ennemi
+        Destroy(gameObject);
     }
 }

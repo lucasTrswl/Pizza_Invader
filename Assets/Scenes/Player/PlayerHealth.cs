@@ -85,4 +85,15 @@ public class PlayerHealth : MonoBehaviour
 
         SceneManager.LoadScene("GameOver");
     }
+
+    public void Heal(int healAmount)
+    {
+        Debug.Log("+1 vie");
+        // Ajouter des points de vie, mais ne pas dépasser le maximum
+        health = Mathf.Min(health + healAmount, maxHealth); // La santé ne peut pas dépasser maxHealth
+
+        // Mettre à jour l'UI des vies
+        UpdateHealthUI();
+        UpdateHealthText();
+    }
 }
