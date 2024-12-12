@@ -53,7 +53,7 @@ public class PlayerShoot : MonoBehaviour
     {
         // Gestion du zoom avec la molette de la souris
         float scrollInput = Input.GetAxis("Mouse ScrollWheel");
-        if (scrollInput != 0)
+        if (scrollInput != 0 && !pauseMenuManager.GetComponent<PauseMenuManager>().isPaused)
         {
             MainCamera.orthographicSize -= scrollInput * ZoomSpeed; // Utiliser un zoom intuitif
             MainCamera.orthographicSize = Mathf.Clamp(MainCamera.orthographicSize, minZoom, MaxZoom);
