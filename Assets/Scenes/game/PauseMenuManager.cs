@@ -10,7 +10,7 @@ public class PauseMenuManager : MonoBehaviour
     public AudioSource gameTheme;       // Thème principal
     public AudioSource engineSound;     // Son moteur
 
-    private bool isPaused = false;  // Si le jeu est en pause ou non
+    public bool isPaused = false;  // Si le jeu est en pause ou non
 
     void Start()
     {

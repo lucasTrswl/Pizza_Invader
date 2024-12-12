@@ -13,7 +13,7 @@ public class PlayerShoot : MonoBehaviour
     public int MaxBullets = 5; // Nombre maximum de balles
     public int CurrentBullets = 0; // Nombre de balles utilisées
 
-    private PauseMenuManager pauseMenuManager; // Référence au script de gestion de pause
+    public PauseMenuManager pauseMenuManager; // Référence au script de gestion de pause
     public AudioClip ShootMediumBullet; // Son du tir
 
     public AudioClip ShootLargeBullet;
@@ -63,7 +63,7 @@ public class PlayerShoot : MonoBehaviour
     void HandleShooting()
     {
         // Vérifier si le joueur appuie sur le bouton gauche de la souris
-        if (Input.GetMouseButtonDown(0) && CurrentBullets < MaxBullets)
+        if (Input.GetMouseButtonDown(0) && CurrentBullets < MaxBullets && !pauseMenuManager.GetComponent<PauseMenuManager>().isPaused)
         {
             string bulletType;
             GameObject bullet;
