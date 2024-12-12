@@ -34,9 +34,12 @@ public class WaveManager : MonoBehaviour
 
     void SpawnEnemy()
     {
+
         GameObject enemyPrefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Length)];
+        
         Vector3 spawnPosition = spawnPoint.position + new Vector3(Random.Range(-spawnRadius, spawnRadius), Random.Range(-spawnRadius, spawnRadius), 0);
-        Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+        GameObject enemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+        enemy.transform.SetParent(GameObject.Find("enemyGroup").transform);
     }
 
     public void EnemyDefeated()
