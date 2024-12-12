@@ -1,13 +1,14 @@
 using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
-    public int health = 2; // Nombre initial de vies de l'ennemi
+    public int health = 3; // Nombre initial de vies de l'ennemi
     public void TakeDamage(int damage)
     {
         health -= damage;
+        Debug.Log($"Enemy took {damage} damage, remaining health: {health}"); // Afficher dégâts et santé restante
+
         if (health <= 0)
         {
-            // Appeler une méthode pour gérer la mort de l'ennemi
             Die();
         }
     }

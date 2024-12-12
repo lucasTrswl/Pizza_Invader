@@ -3,6 +3,14 @@ using UnityEngine;
 
 public class PlayerBulletMove : MonoBehaviour
 {
+    private string bulletType; // Type de la balle (Normal, Large, etc.)
+
+    public void SetBulletType(string type)
+    {
+        bulletType = type;
+        Debug.Log("Bullet Type: " + bulletType); // Affiche le type de balle dans les logs
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,20 +28,35 @@ public class PlayerBulletMove : MonoBehaviour
     }
 
 
-      private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject.tag);
         if (collision.gameObject.CompareTag("Enemy")) // Vérifie si l'objet touché est un ennemi
         {
-            // Réduit les points de vie de l'ennemi
             EnemyHealth enemyHealth = collision.gameObject.GetComponent<EnemyHealth>();
             if (enemyHealth != null)
             {
-                enemyHealth.TakeDamage(1); // Inflige 1 point de dégâts à l'ennemi
+                if (bulletType == "Normal")
+                {
+                    Debug.Log("Applying 1 damage");
+                    enemyHealth.TakeDamage(1);
+                }
+                else if (bulletType == "Large")
+                {
+                    Debug.Log("Applying 2 damage");
+                    enemyHealth.TakeDamage(2);
+                }
+                else
+                {
+                    Debug.LogWarning("Unknown bullet type: " + bulletType);
+                }
             }
 
-            Destroy(gameObject); // Détruit la balle après la collision
-        }
-    }
+            // Désactiver le collider pour éviter d'autres collisions
+            GetComponent<Collider2D>().enabled = false;
 
+            Destroy(gameObject); // Détruire la balle après collision
+        }
+
+
+    }
 }

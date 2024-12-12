@@ -43,19 +43,43 @@ public class PlayerShoot : MonoBehaviour
 
     void HandleShooting()
     {
+
+
         // Vérifier si le joueur appuie sur le bouton gauche de la souris
         if (Input.GetMouseButtonDown(0) && CurrentBullets < MaxBullets)
         {
+            string bulletType;
+            GameObject bullet;
+
             // Vérifier la taille de la caméra pour déterminer le type de tir
             if (MainCamera.orthographicSize < 6f)
             {
-                // Si la caméra est en dessous de 9 (zoom), tirer une grande balle
-                Instantiate(LargeBullet, transform.position + Vector3.up * 0.5f, Quaternion.identity);
+                bullet = LargeBullet;
+                bulletType = "Large";
+
+                GameObject newBullet = Instantiate(LargeBullet, transform.position + Vector3.up * 0.5f, Quaternion.identity);
+
+                // Ajouter le type de balle au script PlayerBulletMove
+                PlayerBulletMove bulletScript = newBullet.GetComponent<PlayerBulletMove>();
+                if (bulletScript != null)
+                {
+                    bulletScript.SetBulletType(bulletType);
+                }
             }
             else
             {
+                bullet = NormalBullet;
+                bulletType = "Normal";
+
                 // Si la caméra est à 9 ou plus (non zoomée), tirer une balle normale
-                Instantiate(NormalBullet, transform.position + Vector3.up * 0.5f, Quaternion.identity);
+                GameObject newBullet = Instantiate(NormalBullet, transform.position + Vector3.up * 0.5f, Quaternion.identity);
+
+                // Ajouter le type de balle au script PlayerBulletMove
+                PlayerBulletMove bulletScript = newBullet.GetComponent<PlayerBulletMove>();
+                if (bulletScript != null)
+                {
+                    bulletScript.SetBulletType(bulletType);
+                }
             }
 
             // Incrémenter le compteur de balles
