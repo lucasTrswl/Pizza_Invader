@@ -102,6 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 8
+  BorderWidth: 10
 --- !u!114 &6278790790143209003
 MonoBehaviour:
   m_ObjectHideFlags: 0

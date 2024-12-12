@@ -62,7 +62,7 @@ public class WaveManager : MonoBehaviour
     void Update()
     {
         // Mettre à jour les informations de l'UI avec TextMeshPro
-        waveText.text = "Wave : " + currentWave;
-        pointsText.text = "Scores : " + totalPoints;
+        waveText.text = "" + currentWave;
+        pointsText.text = "" + totalPoints;
     }
 }

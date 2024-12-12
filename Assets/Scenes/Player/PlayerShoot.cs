@@ -12,9 +12,11 @@ public class PlayerShoot : MonoBehaviour
     public float MaxZoom = 9f; // Zoom maximum
     public int MaxBullets = 5; // Nombre maximum de balles
     public int CurrentBullets = 0; // Nombre de balles utilisées
+
     private PauseMenuManager pauseMenuManager; // Référence au script de gestion de pause
     public AudioClip ShootSound; // Son du tir
     public AudioSource audioSource; // Référence à l'CurrentBullets
+
 
     void Start()
     {
@@ -25,6 +27,7 @@ public class PlayerShoot : MonoBehaviour
         }
 
         CurrentBullets = 0; // Initialisation du compteur de balles
+
 
         // Trouver le PauseMenuManager dans la scène
         pauseMenuManager = FindObjectOfType<PauseMenuManager>();
@@ -38,18 +41,12 @@ public class PlayerShoot : MonoBehaviour
 
         // Assigner le clip de son si défini
         audioSource.clip = ShootSound;
+
     }
 
     void Update()
     {
         HandleZoom();
-
-        // Ne pas gérer le tir si le jeu est en pause
-        if (pauseMenuManager != null && pauseMenuManager.IsPaused())
-        {
-            return; // Ne pas traiter les entrées si le jeu est en pause
-        }
-
         HandleShooting();
     }
 
@@ -66,7 +63,7 @@ public class PlayerShoot : MonoBehaviour
 
     void HandleShooting()
     {
-        // Vérifier si le joueur appuie sur le bouton gauche de la souris et que le nombre de balles n'a pas atteint le maximum
+        // Vérifier si le joueur appuie sur le bouton gauche de la souris
         if (Input.GetMouseButtonDown(0) && CurrentBullets < MaxBullets)
         {
             string bulletType;
