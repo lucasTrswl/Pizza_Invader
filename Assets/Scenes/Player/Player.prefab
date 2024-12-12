@@ -115,7 +115,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
+  maxHealth: 5
   healthText: {fileID: 0}
+  heartPrefab: {fileID: 0}
+  livesContainer: {fileID: 0}
 --- !u!114 &-1329314775586618783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,7 +136,7 @@ MonoBehaviour:
   MainCamera: {fileID: 0}
   ZoomSpeed: 2
   minZoom: 5
-  MaxZoom: 20
+  MaxZoom: 9
   MaxBullets: 5
   CurrentBullets: 0
 --- !u!61 &549626871807949925

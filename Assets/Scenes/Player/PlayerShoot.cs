@@ -9,7 +9,7 @@ public class PlayerShoot : MonoBehaviour
     public Camera MainCamera; // Référence à la caméra principale
     public float ZoomSpeed = 2f; // Vitesse de zoom/dézoom
     public float minZoom = 5f; // Zoom minimum
-    public float MaxZoom = 20f; // Zoom maximum
+    public float MaxZoom = 9f; // Zoom maximum
     public int MaxBullets = 5; // Nombre maximum de balles
     public int CurrentBullets = 0; // Nombre de balles utilisées
 
@@ -43,8 +43,6 @@ public class PlayerShoot : MonoBehaviour
 
     void HandleShooting()
     {
-
-
         // Vérifier si le joueur appuie sur le bouton gauche de la souris
         if (Input.GetMouseButtonDown(0) && CurrentBullets < MaxBullets)
         {
