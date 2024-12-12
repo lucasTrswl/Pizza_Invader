@@ -1,6 +1,5 @@
 using UnityEngine;
-using TMPro;
-using System.Collections;
+using UnityEngine.UI; // Pour accéder au composant Image
 using System.Collections.Generic;
 
 public class BulletUI : MonoBehaviour
@@ -18,7 +17,8 @@ public class BulletUI : MonoBehaviour
             playerShoot = FindObjectOfType<PlayerShoot>();
         }
 
-        for (int i = 0; i < 5; i++)
+        // Créer les icônes pour le nombre maximum de balles
+        for (int i = 0; i < playerShoot.MaxBullets; i++)
         {
             GameObject bulletIcon = Instantiate(bulletPrefab, bulletContainer);
             bulletIcons.Add(bulletIcon);
@@ -29,7 +29,7 @@ public class BulletUI : MonoBehaviour
 
     void Update()
     {
-        // Vérifier si le nombre de munitions a changé
+        // Mettre à jour les icônes si le nombre de balles change
         UpdateBulletsUI();
     }
 
@@ -37,10 +37,23 @@ public class BulletUI : MonoBehaviour
     {
         int remainingBullets = playerShoot.MaxBullets - playerShoot.CurrentBullets;
 
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < bulletIcons.Count; i++)
         {
-            bulletIcons[i].SetActive(i < remainingBullets);
+            Image bulletImage = bulletIcons[i].GetComponent<Image>();
+
+            if (bulletImage != null)
+            {
+                if (i < remainingBullets)
+                {
+                    // Balles restantes : Pleinement opaques
+                    bulletImage.color = new Color(1, 1, 1, 1);
+                }
+                else
+                {
+                    // Balles tirées : Semi-transparentes
+                    bulletImage.color = new Color(1, 1, 1, 0.3f);
+                }
+            }
         }
     }
-
 }
