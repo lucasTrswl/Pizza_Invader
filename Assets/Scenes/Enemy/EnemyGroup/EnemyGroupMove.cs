@@ -8,7 +8,7 @@ namespace Assets.Scenes
         public float speed;
         private float moveDirection = 0;
         public float BorderWidth = 10;
-
+        
         // Use this for initialization
         void Start()
         {
