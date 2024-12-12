@@ -19,7 +19,6 @@ public class EnemyBulletDamage : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject.tag);
         if (collision.gameObject.CompareTag("Player"))
         {
             // Réduit les points de vie du joueur

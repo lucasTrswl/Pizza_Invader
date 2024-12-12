@@ -26,8 +26,6 @@ public class EnemyShoot : MonoBehaviour
          shootSound = g.GetComponent<AudioSource>();
 
         }
-
-        Debug.Log(shootSound.name);
     }
 
     // Update is called once per frame
