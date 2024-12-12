@@ -12,10 +12,20 @@ public class PlayerHealth : MonoBehaviour
     public GameObject heartPrefab; // Le prefab de l'icône de vie (par exemple, un cœur)
     public Transform livesContainer; // Conteneur des icônes de vie
 
+    public AudioClip deathSound; // Son joué lorsque le joueur meurt
+    public AudioSource audioSource; // Référence à l'AudioSource
+
     private List<GameObject> heartIcons = new List<GameObject>(); // Liste des icônes de vie actives
 
     void Start()
     {
+        // Initialiser l'AudioSource
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            Debug.LogError("AudioSource manquant sur le GameObject !");
+        }
+
         // Initialiser l'affichage des vies dès le début
         UpdateHealthUI();
         UpdateHealthText();
@@ -73,9 +83,18 @@ public class PlayerHealth : MonoBehaviour
 
     void Die()
     {
+        // Jouer le son de mort si un clip est assigné
+        if (audioSource != null && deathSound != null)
+        {
+            audioSource.PlayOneShot(deathSound);
+        }
+        else
+        {
+            Debug.LogWarning("Aucun son de mort assigné ou AudioSource manquant !");
+        }
+
         // Détruit le joueur ou effectue d'autres actions comme un écran Game Over
         Debug.Log("Player is Dead");
-        Destroy(gameObject);
 
         // Optionnel : Réinitialiser ou désactiver le texte de la santé
         if (healthText != null)
@@ -83,6 +102,8 @@ public class PlayerHealth : MonoBehaviour
             healthText.text = "Player Health : 0";
         }
 
+        // Charger la scène Game Over après un délai pour permettre au son de jouer
+        Destroy(gameObject, 1.5f); // Attends 1.5 secondes avant de détruire le joueur
         SceneManager.LoadScene("GameOver");
     }
 
