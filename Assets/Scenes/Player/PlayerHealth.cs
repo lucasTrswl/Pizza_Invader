@@ -13,6 +13,7 @@ public class PlayerHealth : MonoBehaviour
     public Transform livesContainer; // Conteneur des icônes de vie
 
     public AudioClip deathSound; // Son joué lorsque le joueur meurt
+    public AudioSource damageSound;    // Son joué lorsque le joueur prends des dégats
     public AudioSource audioSource; // Référence à l'AudioSource
 
     private List<GameObject> heartIcons = new List<GameObject>(); // Liste des icônes de vie actives
@@ -45,6 +46,7 @@ public class PlayerHealth : MonoBehaviour
             // Mettre à jour l'affichage des vies et du texte
             UpdateHealthUI();
             UpdateHealthText();
+            damageSound.Play();
         }
     }
 

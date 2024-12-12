@@ -4,22 +4,29 @@ public class EnemyHealth : MonoBehaviour
 {
     public int health = 3; // Points de vie de l'ennemi
     public AudioSource deathSound; // Référence à l'AudioSource qui joue le son de la mort
+    public AudioSource damageSound; // joue quand prends domages
 
     private WaveManager waveManager; // Référence au WaveManager
 
 
     void Start()
     {
-        GameObject g = GameObject.Find("EnemyDeathSound");
+        GameObject gDeath = GameObject.Find("EnemyDeathSound");
+        GameObject gDamage = GameObject.Find("EnemyDamagedSound");
+
         // Trouver le WaveManager dans la scène
         waveManager = FindObjectOfType<WaveManager>();
 
         // Si l'AudioSource n'est pas assigné dans l'inspecteur, on tente de le récupérer sur l'objet
         if (deathSound == null)
         {
-            deathSound = g.GetComponent<AudioSource>();
+            deathSound = gDeath.GetComponent<AudioSource>();
+        }
 
-            Debug.Log(deathSound.name);
+        if (damageSound == null)
+        {
+            damageSound = gDamage.GetComponent<AudioSource>();
+
         }
     }
 
@@ -29,6 +36,9 @@ public class EnemyHealth : MonoBehaviour
         if (health <= 0)
         {
             Die();
+        } else
+        {
+            damageSound.Play();
         }
     }
 

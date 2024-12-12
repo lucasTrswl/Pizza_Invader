@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6255687462203759091}
   - component: {fileID: 7105594896822946348}
   - component: {fileID: 5796054676125671687}
-  - component: {fileID: -6336344314278599694}
   - component: {fileID: 8117455978205889975}
   - component: {fileID: -5655819236163917066}
   m_Layer: 0
@@ -49,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 2
+  deathSound: {fileID: 0}
 --- !u!212 &5796054676125671687
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -101,19 +101,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-6336344314278599694
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8772848132399414832}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49ed14580ed754f7b8306e1a60b8493a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tag: Enemy
 --- !u!114 &8117455978205889975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,6 +116,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7539998439469810473, guid: bb15405bb4d96c341a7aa1c1c4256fc8, type: 3}
   minShootInterval: 1
   maxShootInterval: 3
+  shootSound: {fileID: 0}
 --- !u!61 &-5655819236163917066
 BoxCollider2D:
   m_ObjectHideFlags: 0
