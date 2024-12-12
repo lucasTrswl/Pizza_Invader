@@ -13,6 +13,13 @@ public class PlayerShoot : MonoBehaviour
     public int MaxBullets = 5; // Nombre maximum de balles
     public int CurrentBullets = 0; // Nombre de balles utilisées
 
+    private PauseMenuManager pauseMenuManager; // Référence au script de gestion de pause
+    public AudioClip ShootMediumBullet; // Son du tir
+
+    public AudioClip ShootLargeBullet;
+    public AudioSource audioSource; // Référence à l'CurrentBullets
+
+
     void Start()
     {
         // Si la caméra principale n'est pas assignée, utiliser celle par défaut
@@ -22,6 +29,18 @@ public class PlayerShoot : MonoBehaviour
         }
 
         CurrentBullets = 0; // Initialisation du compteur de balles
+
+
+        // Trouver le PauseMenuManager dans la scène
+        pauseMenuManager = FindObjectOfType<PauseMenuManager>();
+
+        // Récupérer ou ajouter un AudioSource
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+
     }
 
     void Update()
@@ -63,6 +82,13 @@ public class PlayerShoot : MonoBehaviour
                 {
                     bulletScript.SetBulletType(bulletType);
                 }
+
+                // Jouer le son de tir
+                if (audioSource != null && ShootLargeBullet != null)
+                {
+                    audioSource.clip = ShootLargeBullet;
+                    audioSource.Play();
+                }
             }
             else
             {
@@ -77,6 +103,13 @@ public class PlayerShoot : MonoBehaviour
                 if (bulletScript != null)
                 {
                     bulletScript.SetBulletType(bulletType);
+                }
+
+                // Jouer le son de tir
+                if (audioSource != null && ShootMediumBullet != null)
+                {
+                    audioSource.clip = ShootMediumBullet;
+                    audioSource.Play();
                 }
             }
 
