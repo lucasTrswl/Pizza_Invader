@@ -9,12 +9,25 @@ public class EnemyShoot : MonoBehaviour
     public float maxShootInterval = 3.0f; // Intervalle maximum entre les tirs
 
     private float shootTimer; // Temps restant avant le prochain tir
+    private AudioSource shootSound; // Référence à l'AudioSource
 
     // Start is called before the first frame update
     void Start()
     {
+        GameObject g = GameObject.Find("EnemyShootSound");
+
+
         // Initialisation du timer de tir avec un intervalle aléatoire
         ResetShootTimer();
+
+        // Récupérer ou ajouter un AudioSource
+        if (shootSound == null)
+        {
+         shootSound = g.GetComponent<AudioSource>();
+
+        }
+
+        Debug.Log(shootSound.name);
     }
 
     // Update is called once per frame
@@ -36,6 +49,12 @@ public class EnemyShoot : MonoBehaviour
     {
         // Crée la balle à la position de l'ennemi
         Instantiate(bulletPrefab, transform.position + Vector3.down * 0.5f, Quaternion.identity);
+
+        // Jouer le son du tir
+        if (shootSound != null)
+        {
+            shootSound.PlayOneShot(shootSound.clip);
+        }
     }
 
     void ResetShootTimer()

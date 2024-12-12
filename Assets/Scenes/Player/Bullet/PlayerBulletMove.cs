@@ -8,7 +8,7 @@ public class PlayerBulletMove : MonoBehaviour
     public void SetBulletType(string type)
     {
         bulletType = type;
-        Debug.Log("Bullet Type: " + bulletType); // Affiche le type de balle dans les logs
+        //Debug.Log("Bullet Type: " + bulletType); // Affiche le type de balle dans les logs
     }
 
     // Start is called before the first frame update
@@ -35,17 +35,17 @@ public class PlayerBulletMove : MonoBehaviour
             {
                 if (bulletType == "Normal")
                 {
-                    Debug.Log("Applying 1 damage");
+                    // Debug.Log("Applying 1 damage");
                     enemyHealth.TakeDamage(1); // Inflige 1 point de dégâts
                 }
                 else if (bulletType == "Large")
                 {
-                    Debug.Log("Applying 2 damage");
+                    // Debug.Log("Applying 2 damage");
                     enemyHealth.TakeDamage(2); // Inflige 2 points de dégâts
                 }
                 else
                 {
-                    Debug.LogWarning("Unknown bullet type: " + bulletType);
+                    // Debug.LogWarning("Unknown bullet type: " + bulletType);
                 }
             }
 
