@@ -6,7 +6,7 @@ public class StartSpawner : MonoBehaviour
 {
     public GameObject[] stars;
     private GameObject[] currents;
-    private float spawnTimer = 0.5f;
+    private float spawnTimer = 0.25f;
     public float spawnRadius = 15;
     public float spawnHeight = 10;
 
