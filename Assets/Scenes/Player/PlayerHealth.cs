@@ -7,8 +7,9 @@ using System.Collections.Generic; // Pour la liste des icônes
 public class PlayerHealth : MonoBehaviour
 {
     public int health = 3; // Nombre initial de points de vie
-    public int maxHealth = 5; // Nombre maximum de vies (au cas où vous voulez un maximum)
-    public int score = 0;
+
+    public int maxHealth = 3; // Nombre maximum de vies (au cas où vous voulez un maximum)
+
     public TextMeshProUGUI healthText; // Référence au texte TextMeshPro UI
     public GameObject heartPrefab; // Le prefab de l'icône de vie (par exemple, un cœur)
     public Transform livesContainer; // Conteneur des icônes de vie
@@ -101,6 +102,14 @@ public class PlayerHealth : MonoBehaviour
 
     public void Heal(int healAmount)
     {
-        health += healAmount;
+        if (health < maxHealth)
+        {
+            health += healAmount;
+            UpdateHealthUI();
+        }
+        else
+        {
+
+        }
     }
 }

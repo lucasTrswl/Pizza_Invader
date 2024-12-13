@@ -116,12 +116,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
-  maxHealth: 5
+  maxHealth: 3
   healthText: {fileID: 0}
   heartPrefab: {fileID: 0}
   livesContainer: {fileID: 0}
   deathSound: {fileID: 0}
-  audioSource: {fileID: 0}
+  damageSound: {fileID: 0}
 --- !u!114 &-1329314775586618783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,9 +142,13 @@ MonoBehaviour:
   MaxZoom: 9
   MaxBullets: 5
   CurrentBullets: 0
-  ShootMediumBullet: {fileID: 8300000, guid: 73d8a24b68c174328b618842b63ae6db, type: 3}
-  ShootLargeBullet: {fileID: 8300000, guid: dfd961bcf5c80453785b44768cc3db0f, type: 3}
-  audioSource: {fileID: 0}
+  pauseMenuManager: {fileID: 0}
+  ShootMediumBullet: {fileID: 0}
+  ShootLargeBullet: {fileID: 0}
+  isBigBullet: 0
+  isReloading: 0
+  reloadTime: 2
+  reloadTimeIncrement: 0.5
 --- !u!61 &549626871807949925
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -14,10 +14,9 @@ public class PlayerShoot : MonoBehaviour
     public int CurrentBullets = 5; // Nombre de balles disponible
 
     public PauseMenuManager pauseMenuManager; // Référence au script de gestion de pause
-    public AudioClip ShootMediumBullet; // Son du tir
+    public AudioSource ShootMediumBullet; // Son du tir
 
-    public AudioClip ShootLargeBullet;
-    public AudioSource audioSource; // Référence à l'CurrentBullets
+    public AudioSource ShootLargeBullet;
     public bool isBigBullet = false;
     public bool isReloading = false;
     public float reloadTime = 2;
@@ -38,13 +37,6 @@ public class PlayerShoot : MonoBehaviour
 
         // Trouver le PauseMenuManager dans la scène
         pauseMenuManager = FindObjectOfType<PauseMenuManager>();
-
-        // Récupérer ou ajouter un AudioSource
-        audioSource = GetComponent<AudioSource>();
-        if (audioSource == null)
-        {
-            audioSource = gameObject.AddComponent<AudioSource>();
-        }
 
     }
 
@@ -87,12 +79,18 @@ public class PlayerShoot : MonoBehaviour
             }
 
             // Jouer le son de tir
-            if (audioSource != null && ((isBigBullet && ShootLargeBullet != null) || (!isBigBullet && ShootMediumBullet != null)))
+            if (((isBigBullet && ShootLargeBullet != null) || (!isBigBullet && ShootMediumBullet != null)))
             {
-                audioSource.clip = isBigBullet ? ShootLargeBullet : ShootMediumBullet;
-                audioSource.Play();
+                if (isBigBullet)
+                {
+                    ShootLargeBullet.Play();
+                }
+                else
+                {
+                    ShootMediumBullet.Play();
+                }
             }
-            
+
 
             // Incrémenter le compteur de balles, bah non du coup ?
             CurrentBullets--;
