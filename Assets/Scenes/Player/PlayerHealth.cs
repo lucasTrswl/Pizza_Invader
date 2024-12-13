@@ -14,19 +14,11 @@ public class PlayerHealth : MonoBehaviour
 
     public AudioClip deathSound; // Son joué lorsque le joueur meurt
     public AudioSource damageSound;    // Son joué lorsque le joueur prends des dégats
-    public AudioSource audioSource; // Référence à l'AudioSource
 
     private List<GameObject> heartIcons = new List<GameObject>(); // Liste des icônes de vie actives
 
     void Start()
     {
-        // Initialiser l'AudioSource
-        audioSource = GetComponent<AudioSource>();
-        if (audioSource == null)
-        {
-            Debug.LogError("AudioSource manquant sur le GameObject !");
-        }
-
         // Initialiser l'affichage des vies dès le début
         UpdateHealthUI();
         UpdateHealthText();
@@ -85,15 +77,6 @@ public class PlayerHealth : MonoBehaviour
 
     void Die()
     {
-        // Jouer le son de mort si un clip est assigné
-        if (audioSource != null && deathSound != null)
-        {
-            audioSource.PlayOneShot(deathSound);
-        }
-        else
-        {
-            Debug.LogWarning("Aucun son de mort assigné ou AudioSource manquant !");
-        }
 
         // Détruit le joueur ou effectue d'autres actions comme un écran Game Over
         Debug.Log("Player is Dead");

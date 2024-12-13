@@ -1,13 +1,14 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using static UnityEngine.Rendering.HableCurve;
 
 public class PauseMenuManager : MonoBehaviour
 {
     public GameObject pauseMenuUI;  // Référence au menu de pause (Panel)
     public Button resumeButton;     // Bouton Reprendre
     public Button mainMenuButton;       // Bouton Quitter
-    public AudioSource gameTheme;       // Thème principal
+    public GameThemeController gameTheme;       // Thème principal
     public AudioSource engineSound;     // Son moteur
 
     public bool isPaused = false;  // Si le jeu est en pause ou non
@@ -43,7 +44,7 @@ public class PauseMenuManager : MonoBehaviour
         isPaused = true;
         pauseMenuUI.SetActive(true);   // Affiche le menu de pause
         Time.timeScale = 0f;           // Met le jeu en pause (arrête le temps)
-        gameTheme.mute = true;
+        gameTheme.SetMenu(true);
         engineSound.mute = true;
     }
 
@@ -52,7 +53,7 @@ public class PauseMenuManager : MonoBehaviour
         isPaused = false;
         pauseMenuUI.SetActive(false);  // Cache le menu de pause
         Time.timeScale = 1f;           // Reprend le jeu (le temps reprend)
-        gameTheme.mute = false;
+        gameTheme.SetMenu(false);
         engineSound.mute = false;
     }
 

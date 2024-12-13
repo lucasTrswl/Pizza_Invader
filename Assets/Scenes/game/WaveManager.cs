@@ -24,10 +24,13 @@ public class WaveManager : MonoBehaviour
     public PlayerHealth playerHealth;  // Référence à la santé du joueur
     public PlayerShoot playerShoot;    // Réf fusil joueur
     public GameObject EnemyGroup;
+    public GameThemeController gameTheme;
+    public int speedThemeStartAt = 6;
 
     void Start()
     {
         StartWave();
+        speedThemeStartAt = firstRowSpawns.Length;
     }
 
     void StartWave()
@@ -66,6 +69,14 @@ public class WaveManager : MonoBehaviour
             if (enemiesPerWave < firstRowSpawns.Length + secondRowSpawns.Length)
             {
                 enemiesPerWave++;
+            }
+
+            if (enemiesPerWave >= speedThemeStartAt)
+            {
+                gameTheme.SetSpeed(true);
+            } else
+            {
+                gameTheme.SetSpeed(false);
             }
 
             // Le joueur récupère une vie à la fin de chaque vague
