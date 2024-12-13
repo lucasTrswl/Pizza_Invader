@@ -45,7 +45,6 @@ public class BulletUI : MonoBehaviour
         for (int i = 0; i < bulletIcons.Count; i++)
         {
             Image bulletImage = bulletIcons[i].GetComponent<Image>();
-            Debug.Log(bulletImage.name);
             bulletImage.sprite = playerShoot.isBigBullet ? bulletPrefabBig.GetComponent<Image>().sprite : bulletPrefabSmall.GetComponent<Image>().sprite;
 
             if (bulletImage != null)

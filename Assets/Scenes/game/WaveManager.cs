@@ -38,7 +38,7 @@ public class WaveManager : MonoBehaviour
         enemiesRemaining = enemiesPerWave;
 
         Vector2[] positions = GetCentered(secondRowSpawns, firstRowSpawns, enemiesPerWave);
-        
+
         foreach (Vector2 position in positions)
         {
             SpawnEnemy(position);
@@ -74,7 +74,8 @@ public class WaveManager : MonoBehaviour
             if (enemiesPerWave >= speedThemeStartAt)
             {
                 gameTheme.SetSpeed(true);
-            } else
+            }
+            else
             {
                 gameTheme.SetSpeed(false);
             }
