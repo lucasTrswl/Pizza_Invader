@@ -52,7 +52,7 @@ public class BulletUI : MonoBehaviour
             {
                 if (playerShoot.isReloading)
                 {
-                    reloadTimer += reloadAnimationSpeed;
+                    reloadTimer += reloadAnimationSpeed * Time.deltaTime;
                     if (reloadTimer > 2 * Mathf.PI)
                     {
                         reloadTimer = 0;

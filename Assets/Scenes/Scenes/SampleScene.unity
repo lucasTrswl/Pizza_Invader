@@ -240,7 +240,7 @@ MonoBehaviour:
   bulletPrefabBig: {fileID: 6422007820198420228, guid: bdc8229fdfd01964ea198cb7c7e1541c, type: 3}
   bulletContainer: {fileID: 202914699}
   reloadTimer: 0
-  reloadAnimationSpeed: 0.005
+  reloadAnimationSpeed: 2
 --- !u!4 &98624727
 Transform:
   m_ObjectHideFlags: 0
@@ -295,6 +295,10 @@ PrefabInstance:
       objectReference: {fileID: 854329046, guid: ea2c2199b68b76f4db49ae4d1bc5563e, type: 3}
     - target: {fileID: 2882802953015377057, guid: 57ab7a13ab59ed9408e38ca8c7c6c67a, type: 3}
       propertyPath: BorderWidth
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882802953015377057, guid: 57ab7a13ab59ed9408e38ca8c7c6c67a, type: 3}
+      propertyPath: levitatingSpeed
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3529093667430248109, guid: 57ab7a13ab59ed9408e38ca8c7c6c67a, type: 3}
