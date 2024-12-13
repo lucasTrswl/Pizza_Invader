@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection.Emit;
 using UnityEngine;
 
 public class StartSpawner : MonoBehaviour
 {
     public GameObject[] stars;
     private GameObject[] currents;
-    private float spawnTimer = 0.25f;
+    private float spawnTimer = 0.05f;
+    public float spawnInterval = 0.25f;
     public float spawnRadius = 15;
     public float spawnHeight = 10;
 
@@ -28,7 +30,7 @@ public class StartSpawner : MonoBehaviour
         if (spawnTimer <= 0)
         {
             SpawnRandomStar(spawnHeight);
-            spawnTimer = 1;
+            spawnTimer = spawnInterval;
         }
     }
     
