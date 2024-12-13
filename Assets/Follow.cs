@@ -20,7 +20,7 @@ public class Follow : MonoBehaviour
     private void Update()
     {
         if (playerShoot.isBigBullet) {
-            transform.position = new Vector3(Player.transform.position.x, transform.position.y, transform.position.z);
+            transform.position = new Vector3(Player.transform.position.x, originalPos.y + 0.7f, originalPos.z);
         } else
         {
             transform.position = originalPos;
