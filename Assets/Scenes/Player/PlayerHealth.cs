@@ -7,7 +7,9 @@ using System.Collections.Generic; // Pour la liste des icônes
 public class PlayerHealth : MonoBehaviour
 {
     public int health = 3; // Nombre initial de points de vie
+
     public int maxHealth = 3; // Nombre maximum de vies (au cas où vous voulez un maximum)
+
     public TextMeshProUGUI healthText; // Référence au texte TextMeshPro UI
     public GameObject heartPrefab; // Le prefab de l'icône de vie (par exemple, un cœur)
     public Transform livesContainer; // Conteneur des icônes de vie
@@ -23,6 +25,9 @@ public class PlayerHealth : MonoBehaviour
         UpdateHealthUI();
         UpdateHealthText();
     }
+
+
+    
 
     public void TakeDamage(int damage)
     {
@@ -86,6 +91,9 @@ public class PlayerHealth : MonoBehaviour
         {
             healthText.text = "Player Health : 0";
         }
+
+        GameData.Save();
+        Debug.Log("Score actuel : " + GameData.PlayerScore);
 
         // Charger la scène Game Over après un délai pour permettre au son de jouer
         Destroy(gameObject, 1.5f); // Attends 1.5 secondes avant de détruire le joueur

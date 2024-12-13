@@ -10,7 +10,7 @@ public class WaveManager : MonoBehaviour
     public Transform spawnPoint;
     public int currentWave = 1;
     public int enemiesPerWave = 1;
-    public int pointsPerWave = 10;
+    public int pointsPerEnemy = 15;
     public float spawnRadius = 2f;
     public Vector2[] firstRowSpawns; // impaire
     public Vector2[] secondRowSpawns; // pair
@@ -19,8 +19,6 @@ public class WaveManager : MonoBehaviour
     public TMP_Text pointsText;  // Référence publique pour le texte des points (TextMeshPro)
 
     private int enemiesRemaining;
-    private int totalPoints = 0;
-
     public PlayerHealth playerHealth;  // Référence à la santé du joueur
     public PlayerShoot playerShoot;    // Réf fusil joueur
     public GameObject EnemyGroup;
@@ -29,6 +27,7 @@ public class WaveManager : MonoBehaviour
 
     void Start()
     {
+        GameData.Init();
         StartWave();
         speedThemeStartAt = firstRowSpawns.Length;
     }
@@ -60,10 +59,10 @@ public class WaveManager : MonoBehaviour
     public void EnemyDefeated()
     {
         enemiesRemaining--;
+        GameData.AddScore(pointsPerEnemy);
 
         if (enemiesRemaining <= 0)
         {
-            totalPoints += pointsPerWave;
             currentWave++;
 
             if (enemiesPerWave < firstRowSpawns.Length + secondRowSpawns.Length)
@@ -94,7 +93,7 @@ public class WaveManager : MonoBehaviour
     {
         // Mettre à jour les informations de l'UI avec TextMeshPro
         waveText.text = "" + currentWave;
-        pointsText.text = "" + totalPoints;
+        pointsText.text = "" + GameData.PlayerScore;
     }
 
     // Utile pour placer les enemis au centre

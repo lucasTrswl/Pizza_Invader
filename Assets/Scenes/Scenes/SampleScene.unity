@@ -1408,7 +1408,7 @@ AudioSource:
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
-  BypassEffects: 0
+  BypassEffects: 1
   BypassListenerEffects: 0
   BypassReverbZones: 0
   rolloffCustomCurve:
@@ -2657,7 +2657,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 196562511}
   currentWave: 1
   enemiesPerWave: 1
-  pointsPerWave: 10
+  pointsPerEnemy: 15
   spawnRadius: 3
   firstRowSpawns:
   - {x: -12, y: 7.5}
