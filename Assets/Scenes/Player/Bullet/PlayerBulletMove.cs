@@ -1,15 +1,10 @@
+using System;
 using UnityEngine;
 
 public class PlayerBulletMove : MonoBehaviour
 {
-    private string bulletType; // Type de la balle (Normal, Large, etc.)
+    private bool _isBigBullet; // Type de la balle (Normal, Large)
     public float bulletSpeed = 9f; // Vitesse de la balle (modifiable dans l'inspecteur)
-
-    public void SetBulletType(string type)
-    {
-        bulletType = type;
-        //Debug.Log("Bullet Type: " + bulletType); // Affiche le type de balle dans les logs
-    }
 
     // Start is called before the first frame update
     void Start()
@@ -31,22 +26,12 @@ public class PlayerBulletMove : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy")) // Vérifie si l'objet touché est un ennemi
         {
             EnemyHealth enemyHealth = collision.gameObject.GetComponent<EnemyHealth>();
+
+            int damage = _isBigBullet ? 2 : 1;
+
             if (enemyHealth != null)
             {
-                if (bulletType == "Normal")
-                {
-                    // Debug.Log("Applying 1 damage");
-                    enemyHealth.TakeDamage(1); // Inflige 1 point de dégâts
-                }
-                else if (bulletType == "Large")
-                {
-                    // Debug.Log("Applying 2 damage");
-                    enemyHealth.TakeDamage(2); // Inflige 2 points de dégâts
-                }
-                else
-                {
-                    // Debug.LogWarning("Unknown bullet type: " + bulletType);
-                }
+                enemyHealth.TakeDamage(damage);
             }
 
             // Désactiver le collider pour éviter d'autres collisions
@@ -54,5 +39,10 @@ public class PlayerBulletMove : MonoBehaviour
 
             Destroy(gameObject); // Détruire la balle après collision
         }
+    }
+
+    public void SetBigBullet(bool isBigBullet)
+    {
+        _isBigBullet = isBigBullet;
     }
 }

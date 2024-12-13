@@ -236,8 +236,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerShoot: {fileID: 0}
-  bulletPrefab: {fileID: 6422007820198420228, guid: c22e0ae6a3cce104d87df9996d6178bb, type: 3}
+  bulletPrefabSmall: {fileID: 6422007820198420228, guid: c22e0ae6a3cce104d87df9996d6178bb, type: 3}
+  bulletPrefabBig: {fileID: 6422007820198420228, guid: bdc8229fdfd01964ea198cb7c7e1541c, type: 3}
   bulletContainer: {fileID: 202914699}
+  reloadTimer: 0
+  reloadAnimationSpeed: 0.005
 --- !u!4 &98624727
 Transform:
   m_ObjectHideFlags: 0
@@ -453,7 +456,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -208, y: -23.000061}
+  m_AnchoredPosition: {x: -208, y: -23.000122}
   m_SizeDelta: {x: 759.054, y: 344.484}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &202914701
@@ -875,6 +878,7 @@ GameObject:
   - component: {fileID: 519420030}
   - component: {fileID: 519420034}
   - component: {fileID: 519420033}
+  - component: {fileID: 519420035}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1074,6 +1078,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &519420035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa4d2a913f7219848a9dc0232273672a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  originalPos: {x: 0, y: 0, z: 0}
+  camera: {fileID: 0}
+  minZoomForFollow: 7.2
 --- !u!1 &563098275
 GameObject:
   m_ObjectHideFlags: 0
@@ -2547,9 +2567,25 @@ MonoBehaviour:
   enemiesPerWave: 1
   pointsPerWave: 10
   spawnRadius: 3
+  firstRowSpawns:
+  - {x: -12, y: 7.5}
+  - {x: -8, y: 7.5}
+  - {x: -4, y: 7.5}
+  - {x: 0, y: 7.5}
+  - {x: 4, y: 7.5}
+  - {x: 8, y: 7.5}
+  - {x: 12, y: 7.5}
+  secondRowSpawns:
+  - {x: -10, y: 5}
+  - {x: -6, y: 5}
+  - {x: -2, y: 5}
+  - {x: 2, y: 5}
+  - {x: 6, y: 5}
+  - {x: 10, y: 5}
   waveText: {fileID: 563098277}
   pointsText: {fileID: 1292070056}
   playerHealth: {fileID: 1417532669}
+  playerShoot: {fileID: 1826391915}
 --- !u!4 &1312464273
 Transform:
   m_ObjectHideFlags: 0
@@ -3298,6 +3334,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1807139424}
     - target: {fileID: -1329314775586618783, guid: 3b7a2e1b27b15451390942d0d7a5f1d2, type: 3}
+      propertyPath: CurrentBullets
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -1329314775586618783, guid: 3b7a2e1b27b15451390942d0d7a5f1d2, type: 3}
       propertyPath: ShootLargeBullet
       value: 
       objectReference: {fileID: 8300000, guid: dfd961bcf5c80453785b44768cc3db0f, type: 3}
@@ -3399,7 +3439,7 @@ PrefabInstance:
       objectReference: {fileID: 519420031}
     - target: {fileID: 7286046321166823850, guid: 3b7a2e1b27b15451390942d0d7a5f1d2, type: 3}
       propertyPath: BorderWidth
-      value: 9
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7286046321166823850, guid: 3b7a2e1b27b15451390942d0d7a5f1d2, type: 3}
       propertyPath: BaseBorderWidth
@@ -3442,6 +3482,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1370299317071496333, guid: 3b7a2e1b27b15451390942d0d7a5f1d2, type: 3}
   m_PrefabInstance: {fileID: 1826391912}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1826391915 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -1329314775586618783, guid: 3b7a2e1b27b15451390942d0d7a5f1d2, type: 3}
+  m_PrefabInstance: {fileID: 1826391912}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163687553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4966acffd6774ea984c066599e42da9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &1826391917 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 8502102657981582641, guid: 3b7a2e1b27b15451390942d0d7a5f1d2, type: 3}

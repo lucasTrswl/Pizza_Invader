@@ -36,8 +36,6 @@ public class StartSpawner : MonoBehaviour
     {
         int a = Random.Range(0, stars.Length - 1);
 
-        Debug.Log(a);
-
         GameObject starPrefab = stars[a];
 
         Vector3 spawnPosition = new Vector3(Random.Range(-spawnRadius, spawnRadius), y, 0);
