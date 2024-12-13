@@ -23,6 +23,7 @@ public class WaveManager : MonoBehaviour
 
     public PlayerHealth playerHealth;  // Référence à la santé du joueur
     public PlayerShoot playerShoot;    // Réf fusil joueur
+    public GameObject EnemyGroup;
 
     void Start()
     {
@@ -50,6 +51,7 @@ public class WaveManager : MonoBehaviour
         GameObject enemyPrefab = enemyPrefabs[UnityEngine.Random.Range(0, enemyPrefabs.Length)];
 
         GameObject enemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+        enemy.transform.SetParent(EnemyGroup.transform);
     }
 
     public void EnemyDefeated()

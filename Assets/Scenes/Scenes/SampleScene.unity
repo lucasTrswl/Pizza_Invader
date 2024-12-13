@@ -1777,6 +1777,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &899305902 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3529093667430248109, guid: 57ab7a13ab59ed9408e38ca8c7c6c67a, type: 3}
+  m_PrefabInstance: {fileID: 185655563}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &925087326
 GameObject:
   m_ObjectHideFlags: 0
@@ -2586,6 +2591,7 @@ MonoBehaviour:
   pointsText: {fileID: 1292070056}
   playerHealth: {fileID: 1417532669}
   playerShoot: {fileID: 1826391915}
+  EnemyGroup: {fileID: 899305902}
 --- !u!4 &1312464273
 Transform:
   m_ObjectHideFlags: 0
